@@ -1,0 +1,2 @@
+GET http://localhost:8080/events/1/attendees
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImV4cCI6MTc0OTg0MjgyMCwidXNlcklkIjoxfQ.nmyyvV14p7Hdxs3rZ0CjBfgegfTrtGD2Q5iSdOBnqp8

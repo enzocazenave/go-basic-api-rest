@@ -59,3 +59,38 @@ func cancelRegistration(context *gin.Context) {
 		"message": "Registration cancelled successfully.",
 	})
 }
+
+func getAttendees(context *gin.Context) {
+	eventId, err := strconv.ParseInt(context.Param("id"), 10, 64)
+
+	if err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"message": "Could not parse event ID."})
+		return
+	}
+
+	event, err := models.GetEventByID(eventId)
+
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not fetch event. Try again later."})
+		return
+	}
+
+	eventUserOwnerId := event.UserID
+	userId := context.GetInt64("userId")
+
+	if eventUserOwnerId != userId {
+		context.JSON(http.StatusUnauthorized, gin.H{"message": "You are not authorized to view attendees of event."})
+		return
+	}
+
+	attendees, err := event.GetAttendees()
+
+	if err != nil {
+		context.JSON(http.StatusInternalServerError, gin.H{"message": "Could not fetch attendees. Try again later."})
+		return
+	}
+
+	context.JSON(http.StatusOK, gin.H{
+		"attendees": attendees,
+	})
+}
