@@ -1,0 +1,10 @@
+POST http://localhost:8080/events
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImV4cCI6MTc0OTgzOTc1OCwidXNlcklkIjoxfQ.wcmdua6ZxcSSYlseBfqBw6us8dNRlVKsGAzCvvbGuIg
+
+{
+  "name": "Event 1",
+  "description": "This is the first event.",
+  "location": "Buenos Aires",
+  "dateTime": "2025-06-17T00:00:00Z"
+}

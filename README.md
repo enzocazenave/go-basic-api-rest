@@ -1,2 +1,2 @@
-# go-course
-Udemy Course of Go Lang
+# go-basic-api-rest
+Basic API REST with Go

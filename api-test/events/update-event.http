@@ -1,0 +1,10 @@
+PUT http://localhost:8080/events/7
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IiIsImV4cCI6MTc0OTgzODM1NCwidXNlcklkIjoyfQ.cAUyemYLKYnQDfJgUtPCKaZWAsD71zf_DGnVeyw9KgM
+
+{
+  "name": "Updated event",
+  "description": "Updated description",
+  "location": "Updated location",
+  "dateTime": "2020-01-01T00:00:00Z"
+}
